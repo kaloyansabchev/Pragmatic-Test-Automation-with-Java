@@ -1,7 +1,6 @@
 package inclass;
 
 public class Computer {
-    String name;
     int year;
     double price;
     boolean isNotebook;
@@ -11,7 +10,7 @@ public class Computer {
 
     void changeOperationSystem(String newOperationSystem) {
         operationSystem = newOperationSystem;
-        System.out.println("The new operation system is:" + newOperationSystem);
+        System.out.println("The new operation system for one of the computers is changed to: " + newOperationSystem);
     }
 
     void useMemory(double memory) {
@@ -19,6 +18,7 @@ public class Computer {
             System.out.println("Not enough free memory!");
         } else {
             freeMemory = freeMemory - memory;
+            System.out.println("The memory for one of the computers is reduced with " + memory + "GB and now the free space is:" + freeMemory + "GB.");
         }
     }
 }
