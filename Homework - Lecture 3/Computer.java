@@ -10,7 +10,7 @@ public class Computer {
 
     void changeOperationSystem(String newOperationSystem) {
         operationSystem = newOperationSystem;
-        System.out.println("The new operation system for one of the computers is changed to: " + newOperationSystem);
+        System.out.println("The new operation system for the computer is changed to: " + newOperationSystem);
     }
 
     void useMemory(double memory) {
