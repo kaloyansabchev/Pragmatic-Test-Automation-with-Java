@@ -87,13 +87,13 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
     @Override
     public void viewAllUsers() {
         User[] allUsers = database.getDataBase();
-
+        System.out.println("-----ALl-----");
         for (int i = 0; i < allUsers.length; i++) {
             if (allUsers[i] != null) {
                 System.out.println(allUsers[i].toString());
             }
         }
-        System.out.println("");
+
     }
 
 
