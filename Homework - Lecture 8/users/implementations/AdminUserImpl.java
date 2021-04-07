@@ -17,6 +17,49 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
     }
 
     @Override
+    public User createUser(String userName, boolean isAdmin) {
+        User[] allUsers = database.getDataBase();
+
+        if (isAdmin) {
+            AdminUser adminUser = null;
+            if (checkIfUserExists(userName)) {
+                System.out.println("There is already a admin user registered with username: " + userName);
+                return null;
+            }
+
+            for (int i = 0; i < allUsers.length; i++) {
+                if (allUsers[i] == null) {
+                    adminUser = new AdminUserImpl(userName);
+                    allUsers[i] = adminUser;
+                    return adminUser;
+                }
+            }
+
+            System.out.println("Database is full no more place for users.\n");
+            return null;
+        } else {
+            User normalUser = null;
+
+            if (checkIfUserExists(userName)) {
+                System.out.println("There is already a user registered with username: " + userName);
+                return null;
+            }
+
+            for (int i = 0; i < allUsers.length; i++) {
+                if (allUsers[i] == null) {
+                    normalUser = new UserImpl(userName);
+                    allUsers[i] = normalUser;
+                    System.out.println("User '" + userName + "' is created.");
+                    return normalUser;
+                }
+            }
+
+            System.out.println("Database is full no more place for new users.\n");
+            return null;
+        }
+    }
+
+    @Override
     public void deleteUser(String userName) {
 
         User[] allUsers = database.getDataBase();
@@ -35,59 +78,9 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
 
 
     @Override
-    public User createUser(String userName, boolean isAdmin) {
-        User[] allUsers = database.getDataBase();
-
-        if (isAdmin) {
-            AdminUser adminUser = null;
-
-            //finding if that user already exists anywhere in the database, if it does no need to continue try adding it
-            if (checkIfUserExists(userName)) {
-                System.out.println("There is already a admin user registered with username: " + userName);
-                return null;
-            }
-
-            //finding the first empty slot in the database to create a new user into it
-            for (int i = 0; i < allUsers.length; i++) {
-                if (allUsers[i] == null) {
-                    adminUser = new AdminUserImpl(userName);
-                    allUsers[i] = adminUser;
-                    return adminUser;
-                }
-            }
-
-            //returning null, because there are no empty slots, the database is full already
-            System.out.println("Database is full no more place for users.\n");
-            return null;
-        } else {
-            User normalUser = null;
-
-            //finding if that user already exists anywhere in the database, if it does no need to continue try adding it
-            if (checkIfUserExists(userName)) {
-                System.out.println("There is already a user registered with username: " + userName);
-                return null;
-            }
-
-            //finding the first empty slot in the database to create a new user into it
-            for (int i = 0; i < allUsers.length; i++) {
-                if (allUsers[i] == null) {
-                    normalUser = new UserImpl(userName);
-                    allUsers[i] = normalUser;
-                    System.out.println("User '" + userName + "' is created.");
-                    return normalUser;
-                }
-            }
-
-            System.out.println("Database is full no more place for new users.\n");
-            return null;
-        }
-    }
-
-
-    @Override
     public void viewAllUsers() {
         User[] allUsers = database.getDataBase();
-        System.out.println("-----ALl-----");
+        System.out.println("-----ALl USERS-----");
         for (int i = 0; i < allUsers.length; i++) {
             if (allUsers[i] != null) {
                 System.out.println(allUsers[i].toString());
@@ -96,8 +89,6 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
 
     }
 
-
-    //private method for re-usability to check if a user with specific name already exists
     private boolean checkIfUserExists(String userName) {
         User[] allUsers = database.getDataBase();
 
@@ -109,7 +100,7 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
             }
         }
 
-        // there was no such user, we can continue with adding it
+
         return false;
     }
 }
