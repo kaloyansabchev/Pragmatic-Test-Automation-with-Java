@@ -41,7 +41,7 @@ public abstract class AbstractUser implements User {
 
     @Override
     public void login() {
-        System.out.println("User '" + this.userName + "' has logged in.");
+        System.out.println("User '" + this.userName + "' has successfully logged in.");
         this.isLoggedIn = true;
     }
 
@@ -51,8 +51,13 @@ public abstract class AbstractUser implements User {
 
     @Override
     public void logout() {
-        System.out.println("User '" + this.userName + "' has logged out.");
-        this.isLoggedIn = false;
+        if (isLoggedIn){
+            System.out.println("User '" + this.userName + "' has successfully logged out.");
+            this.isLoggedIn = false;
+        }else {
+            System.out.println("User '" + this.userName + "' isn't logged in and he/she can't logout!");
+        }
+
     }
 
     @Override

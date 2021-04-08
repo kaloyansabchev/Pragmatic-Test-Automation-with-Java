@@ -8,7 +8,7 @@ public class DataBase {
 	public DataBase(int userLimitCount) {
 		this.dataBase = new User[userLimitCount];
 	}
-	
+
 	public User[] getDataBase() {
 		return dataBase;
 	}

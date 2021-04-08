@@ -7,9 +7,9 @@ import user.abstractions.User;
 
 
 public class AdminUserImpl extends AbstractUser implements AdminUser {
-    private static final int ARRAY_LENGTH = 10;
+//    private static final int ARRAY_LENGTH = 10;
 
-    private final DataBase database = new DataBase(ARRAY_LENGTH);
+    private final DataBase database = new DataBase(10);
 
     public AdminUserImpl(String userName) {
         super(userName, true);
@@ -35,7 +35,7 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
                 }
             }
 
-            System.out.println("Database is full no more place for users.\n");
+            System.out.println("!DATABASE IS FULL - no more free places for users!\n");
             return null;
         } else {
             User normalUser = null;
@@ -54,7 +54,7 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
                 }
             }
 
-            System.out.println("Database is full no more place for new users.\n");
+            System.out.println("!DATABASE IS FULL - no more free places for users!\n");
             return null;
         }
     }
@@ -73,14 +73,14 @@ public class AdminUserImpl extends AbstractUser implements AdminUser {
                 }
             }
         }
-        System.out.println("The name '" + userName + "' does not exist in the database, there is nothing to delete.");
+        System.out.println("The user '" + userName + "' does not exist in the database, there is nothing to delete.");
     }
 
 
     @Override
     public void viewAllUsers() {
         User[] allUsers = database.getDataBase();
-        System.out.println("-----ALl USERS-----");
+        System.out.println("--------------- ALl USERS ---------------");
         for (int i = 0; i < allUsers.length; i++) {
             if (allUsers[i] != null) {
                 System.out.println(allUsers[i].toString());
