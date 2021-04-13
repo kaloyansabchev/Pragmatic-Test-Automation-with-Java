@@ -1,5 +1,3 @@
-package homework;
-
 import java.util.*;
 
 public class TaskOne {
@@ -32,7 +30,7 @@ public class TaskOne {
         if (!hasNumberMultipleBy3 && (min % 3 != 0)) {
             System.out.println("There are no number multiple by 3 in the ArrayList.");
         } else {
-            System.out.println("The minimum number multiple by 3 is " + min);
+            System.out.println("The least number that is a multiple of 3 is " + min);
         }
     }
 
