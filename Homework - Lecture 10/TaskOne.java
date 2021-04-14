@@ -11,17 +11,17 @@ public class TaskOne {
             size = Integer.parseInt(sc.nextLine());
         }
 
-        List<Integer> arrayListOfNumbers = new ArrayList<>();
+        List<Integer> theArrayList = new ArrayList<>();
 
         for (int i = 1; i < size + 1; i++) {
             System.out.println("Please enter value for " + i + "-number: ");
             int n = Integer.parseInt(sc.nextLine());
-            arrayListOfNumbers.add(n);
+            theArrayList.add(n);
         }
-        System.out.println("The result collection is: " + arrayListOfNumbers + "\n");
+        System.out.println("The result collection is: " + theArrayList + "\n");
 
-        Iterator<Integer> itr = arrayListOfNumbers.iterator();
-        int min = arrayListOfNumbers.get(0);
+        Iterator<Integer> itr = theArrayList.iterator();
+        int min = theArrayList.get(0);
         boolean hasNumberMultipleBy3 = false;
 
         while (itr.hasNext()) {

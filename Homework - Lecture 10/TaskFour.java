@@ -10,12 +10,12 @@ public class TaskFour {
             size = Integer.parseInt(sc.nextLine());
         }
 
-        List<Double> arrayList = new ArrayList<Double>();
+        List<Double> theArrayList = new ArrayList<Double>();
 
         for (int i = 0; i < size + 1; i++) {
-            arrayList.add(i * 3.0);
+            theArrayList.add(i * 3.0);
         }
-        System.out.println("The collection is looking like: " + arrayList);
+        System.out.println("The collection is looking like: " + theArrayList);
     }
 
 }

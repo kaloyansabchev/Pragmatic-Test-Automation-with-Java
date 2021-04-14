@@ -10,15 +10,15 @@ public class TaskThree {
             size = Integer.parseInt(sc.nextLine());
         }
         System.out.println("You selected " + size + " for your collection length.");
-        List<Integer> arrayList = new ArrayList<>();
+        List<Integer> theArrayList = new ArrayList<>();
 
         for (int i = 1; i < size + 1; i++) {
             System.out.print("Please enter value for " + i + "-number: ");
-            arrayList.add(sc.nextInt());
+            theArrayList.add(sc.nextInt());
         }
         boolean isMirrored = true;
         for (int i = 0; i < size / 2; i++) {
-            if (!arrayList.get(i).equals(arrayList.get(size - 1 - i))) {
+            if (!theArrayList.get(i).equals(theArrayList.get(size - 1 - i))) {
                 isMirrored = false;
                 break;
             }

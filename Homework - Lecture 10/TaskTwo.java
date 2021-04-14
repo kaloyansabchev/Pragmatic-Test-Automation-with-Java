@@ -8,14 +8,14 @@ public class TaskTwo {
         System.out.print("Please enter the first number: ");
         int n = Integer.parseInt(sc.nextLine());
 
-        List<Integer> arrayList = new ArrayList<>();
-        arrayList.add(n);
-        arrayList.add(n);
+        List<Integer> theArrayList = new ArrayList<>();
+        theArrayList.add(n);
+        theArrayList.add(n);
 
         for (int i = 2; i < ARRAY_LENGTH; i++) {
-            arrayList.add(i, (int) arrayList.get(i - 1) + (int) arrayList.get(i - 2));
+            theArrayList.add(i, (int) theArrayList.get(i - 1) + (int) theArrayList.get(i - 2));
         }
 
-        System.out.println("You entered the number [" + n + "] and the results is: " + arrayList);
+        System.out.println("You entered the number [" + n + "] and the results is: " + theArrayList);
     }
 }
