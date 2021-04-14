@@ -1,5 +1,3 @@
-package homework;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -17,7 +15,7 @@ public class TaskTwo {
         arrayList.add(n);
 
         for (int i = 2; i < ARRAY_LENGTH; i++) {
-            arrayList.add(i, (int) arrayList.get(i - 2) + (int) arrayList.get(i - 1));
+            arrayList.add(i, (int) arrayList.get(i - 1) + (int) arrayList.get(i - 2));
         }
 
         System.out.println("You entered the number [" + n + "] and the results is: " + arrayList);

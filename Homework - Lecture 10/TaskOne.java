@@ -1,5 +1,3 @@
-package homework;
-
 import java.util.*;
 
 public class TaskOne {
@@ -11,7 +9,7 @@ public class TaskOne {
         List<Integer> arrayListOfNumbers = new ArrayList<>();
 
         for (int i = 1; i < NUMBERS_IN_LIST; i++) {
-            System.out.println("Please enter " + i + "-number: ");
+            System.out.println("Please enter value for " + i + "-number: ");
             int n = Integer.parseInt(sc.nextLine());
             arrayListOfNumbers.add(n);
         }
