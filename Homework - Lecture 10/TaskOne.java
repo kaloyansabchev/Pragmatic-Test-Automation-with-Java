@@ -1,7 +1,6 @@
 import java.util.*;
 
 public class TaskOne {
-    private static final int NUMBERS_IN_LIST = 6;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -11,7 +10,7 @@ public class TaskOne {
             System.out.print("The number is invalid. Please enter a positive number that is greater than 0!\n");
             size = Integer.parseInt(sc.nextLine());
         }
-//        Scanner sc = new Scanner(System.in);
+
         List<Integer> arrayListOfNumbers = new ArrayList<>();
 
         for (int i = 1; i < size + 1; i++) {
