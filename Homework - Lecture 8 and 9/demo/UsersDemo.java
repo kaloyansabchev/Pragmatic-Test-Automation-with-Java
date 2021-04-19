@@ -6,7 +6,7 @@ import users.implementations.AdminUserImpl;
 
 public class UsersDemo {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         AdminUser milen = new AdminUserImpl("milen");
 
         milen.createUser("gosho", true);
