@@ -25,23 +25,39 @@ public class Person {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAge(int age) throws NotPositiveAgeException {
+        if (age <= 0) {
+            throw new NotPositiveAgeException("The value you entered for age is incorrect.");
+        } else {
+            this.age = age;
+            System.out.println("The value of the age is successfully changed to " + this.age);
+        }
     }
 
     public double getHeight() {
         return height;
     }
 
-    public void setHeight(double height) {
-        this.height = height;
+    public void setHeight(double height) throws NotPositiveHeightException {
+        if (height <= 0) {
+            throw new NotPositiveHeightException("The value you entered for height is incorrect.");
+        } else {
+            this.height = height;
+            System.out.println("The value of the height is successfully changed to " + this.height);
+        }
     }
 
     public double getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
-        this.weight = weight;
+    public void setWeight(double weight) throws NotPositiveWeightException {
+        if (weight <= 0) {
+            throw new NotPositiveWeightException("The value you entered for weight is incorrect.");
+        } else {
+            this.weight = weight;
+            System.out.println("The value of the weight is successfully changed to " + this.weight);
+        }
     }
+
 }
