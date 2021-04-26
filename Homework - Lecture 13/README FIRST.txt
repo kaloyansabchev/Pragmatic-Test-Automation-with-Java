@@ -31,4 +31,8 @@ vesti.bg
 siteground.com
 /html/body/div[1]/section/section[1]/div/article/div[1]/div/div[3]/div/div[3]/a
 //*[@id="owl-cards"]/div[1]/div/div[3]/div/div[3]/a
-//
+//div[3]/div/div[3]/a
+//div[3]/div/div[3]/a[@href='/woocommerce-hosting.htm']
+//a[contains(@class,'btn btn--size') and (contains(@href,'woocommerce'))]
+//div[3]/div/div[3]/a[@href='/woocommerce-hosting.htm']
+
