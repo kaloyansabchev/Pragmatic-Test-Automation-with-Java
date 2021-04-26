@@ -14,6 +14,7 @@ link = Месечен
 
 
 
+
 zamunda.net
 /html/body/table/tbody/tr[4]/td/table/tbody/tr/td[4]/a
 //td[4]/a
@@ -26,6 +27,8 @@ vesti.bg
 //div/input[2]
 //div/input[contains(@id,'searchSubmit')]
 //div/input[contains(@type,'submit')]
+#searchSubmit
+#weather ~ form>div>div ~ input:nth-child(3)
 
 
 siteground.com
@@ -34,5 +37,5 @@ siteground.com
 //div[3]/div/div[3]/a
 //div[3]/div/div[3]/a[@href='/woocommerce-hosting.htm']
 //a[contains(@class,'btn btn--size') and (contains(@href,'woocommerce'))]
-//div[3]/div/div[3]/a[@href='/woocommerce-hosting.htm']
+#owl-cards > div.owl-stage-outer > div > div:nth-child(3) > div > div:nth-child(3) > a
 
