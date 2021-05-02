@@ -13,12 +13,11 @@ link = Месечен
 #astroContent a:nth-child(2)
 
 
-
-
 zamunda.net
 /html/body/table/tbody/tr[4]/td/table/tbody/tr/td[4]/a
 //td[4]/a
 //a[@href='/login.php']
+body > table > tbody > tr:nth-child(4) > td > table > tbody > tr > td:nth-child(4) > a
 
 
 vesti.bg
