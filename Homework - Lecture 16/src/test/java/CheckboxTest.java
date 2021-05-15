@@ -1,5 +1,4 @@
 import org.openqa.selenium.WebDriver;
-
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,6 +16,7 @@ public class CheckboxTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://pragmatic.bg/automation/lecture13/Config.html");
     }
+
     @Test
     public void test() {
         WebElement airBags = this.driver.findElement(By.xpath("//*[@id=\"tabs-1\"]/p[3]/input[2]"));
@@ -25,18 +25,15 @@ public class CheckboxTest {
         Actions builder = new Actions(driver);
 
         builder
-            .click(airBags)
-            .click(parkingSensor)
-            .perform();
+                .click(airBags)
+                .click(parkingSensor)
+                .perform();
 
         boolean isBagsAreSelected = airBags.isSelected();
         boolean isSensorsAreSelected = airBags.isSelected();
         Assert.assertTrue(isBagsAreSelected);
         Assert.assertTrue(isSensorsAreSelected);
 
-    }
-
-    private void click(WebElement parkingSensor) {
     }
 
     @AfterTest
