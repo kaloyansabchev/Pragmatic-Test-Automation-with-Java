@@ -10,7 +10,7 @@ public class Browser {
     public static WebDriver driver;
 
     public static void open() {
-        System.setProperty("webdriver.chrome.driver", "E:\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaloyan.sabchev\\Desktop\\PAT\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
