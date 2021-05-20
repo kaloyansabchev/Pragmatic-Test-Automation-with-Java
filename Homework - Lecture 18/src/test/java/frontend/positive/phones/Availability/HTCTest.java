@@ -9,7 +9,7 @@ public class HTCTest extends BaseTest{
 
     @Test
     public void htcAvailability(){
-        PhonesPage.open();
+        HTC.open();
         HTC.verifyAvailability("HTC Touch HD", "You were unable to find the HTC Phone!");
 
     }

@@ -5,10 +5,10 @@ import org.testng.Assert;
 import pages.frontend.PhonePage.PhonesPage;
 
 public class Iphone extends PhonesPage {
-    private static final By Iphone_NAME_XPATH = By.xpath("//*[@id=\"content\"]/div[2]/div[2]/div/div[2]/div[1]/h4/a");
+    private static final By Iphone_NAME_CSS = By.cssSelector("#content > div:nth-child(3) > div:nth-child(2) h4 > a");
 
     public static void verifyAvailability(String expectedHTC, String messageOnFailure) {
-        String actualHTC = getText(Iphone_NAME_XPATH);
+        String actualHTC = getText(Iphone_NAME_CSS);
         Assert.assertEquals(actualHTC, expectedHTC, messageOnFailure);
     }
 }

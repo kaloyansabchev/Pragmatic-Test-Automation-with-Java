@@ -8,7 +8,7 @@ import pages.frontend.PhonePage.PhonesPage;
 public class IphoneTest extends BaseTest {
     @Test
     public void iphoneAvailability(){
-        PhonesPage.open();
+        Iphone.open();
         Iphone.verifyAvailability("iPhone", "You were unable to find the iPhone!");
 
     }
