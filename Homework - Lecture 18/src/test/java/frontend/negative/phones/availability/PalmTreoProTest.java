@@ -1,4 +1,4 @@
-package frontend.negative;
+package frontend.negative.phones.availability;
 
 import core.BaseTest;
 import org.testng.annotations.Test;

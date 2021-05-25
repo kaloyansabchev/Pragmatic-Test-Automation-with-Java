@@ -1,8 +1,6 @@
 package pages.frontend.PhonePage;
 
 import core.Base;
-import org.openqa.selenium.By;
-import org.testng.Assert;
 import utils.Browser;
 
 public class PhonesPage extends Base {
