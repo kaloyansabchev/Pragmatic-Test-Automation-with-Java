@@ -11,18 +11,30 @@ public class SamsungGalaxyTab extends Base {
     private static final By All_TABLETS_BUTTON = By.xpath("//*[@id=\"menu\"]//li[4]/div/a");
     private static final By SAMSUNG_GALAXY_TAB_NAME_XPATH = By.xpath("//*[@id=\"content\"]//div[2]//h4/a");
 
+    /**
+     * Opens the URL of shop.pragmatic.bg/Tablets
+     */
     public static void open() {
         Browser.driver.get(homePageURL);
     }
 
+    /**
+     * Clicks on the "Tablets" from the header options
+     * and that click on the "Show all tablets" from the dropdown menu
+     */
     public static void goToAllTabletsPage(){
         click(TABLETS_BUTTON);
         click(All_TABLETS_BUTTON);
     }
 
-    public static void verifyAvailability(String expectedSamsunsGalaxyTab, String messageOnFailure) {
+    /**
+     * Asserts if the provide tablet name matches the expected tablet name as the expected
+     * @param expectedSamsungGalaxyTab the name of the tablet that we expect to be shown
+     * @param messageOnFailure the message that will appear in your reports in case if test failure
+     */
+    public static void verifyAvailability(String expectedSamsungGalaxyTab, String messageOnFailure) {
         String actualSamsungGalaxyTab = getText(SAMSUNG_GALAXY_TAB_NAME_XPATH);
-        Assert.assertEquals(actualSamsungGalaxyTab, expectedSamsunsGalaxyTab, messageOnFailure);
+        Assert.assertEquals(actualSamsungGalaxyTab, expectedSamsungGalaxyTab, messageOnFailure);
     }
 
 }
